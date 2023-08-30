@@ -6,7 +6,7 @@ const fs = require("fs");
 const { Triangle, Circle, Square } = require("./lib/shape")
 const Text = require("./lib/text")
 const SVG = require("./lib/svg");
-
+// user prompts
 inquirer
     .prompt([
         {
@@ -53,12 +53,12 @@ inquirer
                 textYAxis = 55; // Y-axis value for Circle
                 break;
             case 'Square':
-                textYAxis = 40; // Y-axis value for Square
+                textYAxis = 38; // Y-axis value for Square
                 break;
         }
 
         // Create instances based on user input
-        const newText = new Text(textColor, logoText);
+        const newText = new Text(textColor, logoText, textYAxis);
         let newShape;
 
         switch (shapeType) {
